@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @genre.name
+%p
+  %b Desk:
+  = @genre.desk
+%p
+  %b Icon:
+  = image_tag @genre.icon.url, width: '300px'
+
+= link_to 'Edit', edit_genre_path(@genre)
+\|
+= link_to 'Back', genres_path

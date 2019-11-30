@@ -1,0 +1,22 @@
+%strong
+  >Login:
+= @user.login
+%br
+%strong
+  >Email:
+= @user.email
+%br
+%strong
+  >Role:
+= @user.role
+%br
+%strong
+  >Icon:>
+= image_tag @user.icon.url, width: '300px'
+
+%br
+> Seleted Genres
+- @user.genres.each do |g|
+  %br
+  = image_tag g.icon.url, width: '50px'
+  = g.name

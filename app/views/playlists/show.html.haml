@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @playlist.name
+%p
+  %b Icon:
+  = image_tag @playlist.icon.url, width: '300px'
+%p
+  %b Author:
+  = @playlist.author.login
+%p
+  %b Status:
+  = @playlist.status
+
+= link_to 'Edit', edit_playlist_path(@playlist)
+\|
+= link_to 'Back', playlists_path

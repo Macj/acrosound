@@ -1,0 +1,20 @@
+= form_for @playlist do |f|
+  - if @playlist.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@playlist.errors.count, "error")} prohibited this playlist from being saved:"
+      %ul
+        - @playlist.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :icon
+    %br
+    = f.file_field :icon 
+  .field
+    = f.label :status
+    = f.text_field :status
+  .actions
+    = f.submit 'Save'
